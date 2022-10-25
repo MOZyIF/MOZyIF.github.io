@@ -22,7 +22,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r &#x27;窗口id&#x27;</span><br></pre></td></tr></table></figure>
 
 <p>安装好screen后创建一个窗口即可开始搭建服务器。</p>
-<h3 id="二、安装JAVA"><a href="#二、安装JAVA" class="headerlink" title="二、安装JAVA"></a>二、安装JAVA</h3><p>JAVA1.8支持mc1.12以下的版本，1.12以上则需要至少JAVA11。</p>
+<h3 id="二、安装JAVA"><a href="#二、安装JAVA" class="headerlink" title="二、安装JAVA"></a>二、安装JAVA</h3><p>JAVA1.8支持mc1.12以下的版本，1.12以上则需要至少JAVA11。<br>具体安装步骤yum install或下载压缩包解压都可以。</p>
 <h3 id="三、下载Minecraft服务端"><a href="#三、下载Minecraft服务端" class="headerlink" title="三、下载Minecraft服务端"></a>三、下载Minecraft服务端</h3><p>可以到mc官网或者mcbbs下载自己想要的服务端文件，例如server1.18.2.jar。</p>
 <p>Minecraft官网：在XGP上下载</p>
 <p>MCBBS:<a target="_blank" rel="noopener" href="https://www.mcbbs.net/">https://www.mcbbs.net/</a></p>
@@ -40,7 +40,7 @@
 <p>​	-Xmn170m：设置年轻代内存大小，单位：兆(m)</p>
 <p>​	-Xss128k：设置每一个线程的栈大小。</p>
 <p>第一次运行时，会提醒运行失败。这时会发现服务端所在目录下多了几个文件，访问eula.txt</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi eula.<span class="property">txt</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi eula.txt</span><br></pre></td></tr></table></figure>
 
 <p>将其中的false改为true。再次运行服务端，这次，服务端运行成功。</p>
 <h3 id="五、服务器配置"><a href="#五、服务器配置" class="headerlink" title="五、服务器配置"></a>五、服务器配置</h3><p>退出服务端进入server.properties</p>
@@ -48,23 +48,8 @@
 
 <p>将其中的online-mode&#x3D;true改为false，这样可以使非正版MC客户端进入服务器。</p>
 <p>其他设置选项作用如下</p>
-<pre><code>level-seed 世界种子
-allow-nether 是否允许地狱
-server-port 服务器的游戏端口(默认25565)
-level-name 世界名称
-pvp 是否开启玩家伤害
-enable-command-block 是否允许命令方块
-white-list 是否开启白名单
-allow-flight 是否允许飞行
-spawn-npcs 是否生成NPC
-spawn-animals 是否生成动物
-spawn-monsters 是否生成怪物
-hardcore 是否开启极限模式
-difficulty 游戏难度
-gamemode 游戏模式
-max-players 最大玩家数
-motd 服务器会在玩家前显示的信息
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">level-seed 世界种子</span><br><span class="line">allow-nether 是否允许地狱</span><br><span class="line">server-port 服务器的游戏端口(默认25565)</span><br><span class="line">level-name 世界名称</span><br><span class="line">pvp 是否开启玩家伤害</span><br><span class="line">enable-command-block 是否允许命令方块</span><br><span class="line">white-list 是否开启白名单</span><br><span class="line">allow-flight 是否允许飞行</span><br><span class="line">spawn-npcs 是否生成NPC</span><br><span class="line">spawn-animals 是否生成动物</span><br><span class="line">spawn-monsters 是否生成怪物</span><br><span class="line">hardcore 是否开启极限模式</span><br><span class="line">difficulty 游戏难度</span><br><span class="line">gamemode 游戏模式</span><br><span class="line">max-players 最大玩家数</span><br><span class="line">motd 服务器会在玩家前显示的信息</span><br></pre></td></tr></table></figure>
+
 <h3 id="六、进入服务器"><a href="#六、进入服务器" class="headerlink" title="六、进入服务器"></a>六、进入服务器</h3><p>和部署其他网站平台一样，需要在防火墙开放端口以及在外部控制台安全组中开放防火墙来完成连接。</p>
 <p>查看已使用端口：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nultp</span><br></pre></td></tr></table></figure>
@@ -80,7 +65,6 @@ motd 服务器会在玩家前显示的信息
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p tcp --dport 8080 -j ACCEPT</span><br></pre></td></tr></table></figure>
 
 <p>至此Minecraft纯净版服务器基本搭建完成。</p>
-<p><img src="C:\Users\MOZYIFEI\AppData\Roaming\Typora\typora-user-images\image-20221026020604065.png" alt="image-20221026020604065"></p>
 </div></article><div class="post-meta__tag-list"></div><nav id="pagination"><div class="next-post pull-right"><a href="/2022/10/25/hello-world/"><span>Hello World</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2022 By MOZYIF</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/lib/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.1"></script><script src="/js/fancybox.js?version=1.9.1"></script><script src="/js/sidebar.js?version=1.9.1"></script><script src="/js/copy.js?version=1.9.1"></script><script src="/js/fireworks.js?version=1.9.1"></script><script src="/js/transition.js?version=1.9.1"></script><script src="/js/scroll.js?version=1.9.1"></script><script src="/js/head.js?version=1.9.1"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
   $('#nav').addClass('is-mobile')
   $('footer').addClass('is-mobile')
