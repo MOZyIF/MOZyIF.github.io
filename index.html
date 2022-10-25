@@ -8,7 +8,80 @@
     noSupport: '浏览器不支持'
   },
   hexoVersion: '6.3.0'
-} </script><meta name="generator" content="Hexo 6.3.0"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="false"><div class="author-info"><div class="author-info__avatar text-center"><img src="https://avatars.githubusercontent.com/u/95163973?s=400&amp;u=5e7a3429a739f163e03c6fe1dd00ee959df88568&amp;v=4"></div><div class="author-info__name text-center">MOZYIF</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">1</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" target="_blank" rel="noopener" href="https://agarthasf.github.io/">AgarthaSF</a></div></div></div><nav class="no-bg" id="nav"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">FEI's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">文章</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a><a class="site-page" href="/gallery">相册</a></span><span class="pull-right"></span></div><div id="site-info"><div id="site-title">FEI's Blog</div><div id="site-sub-title"></div><div id="site-social-icons"><a class="social-icon" href="https://github.com/MOZyIF" target="_blank" rel="noreferrer noopener nofollow"><i class="fa-github fa"></i></a><a class="social-icon" href="https://space.bilibili.com/4413398" target="_blank" rel="noreferrer noopener nofollow"><i class="fa-bilibili fa"></i></a></div></div></nav><div id="content-outer"><div class="layout" id="content-inner"><div class="recent-post-item article-container"><a class="article-title" href="/2022/10/25/hello-world/">Hello World</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2022-10-25</time><div class="content"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+} </script><meta name="generator" content="Hexo 6.3.0"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="false"><div class="author-info"><div class="author-info__avatar text-center"><img src="https://avatars.githubusercontent.com/u/95163973?s=400&amp;u=5e7a3429a739f163e03c6fe1dd00ee959df88568&amp;v=4"></div><div class="author-info__name text-center">MOZYIF</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">2</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" target="_blank" rel="noopener" href="https://agarthasf.github.io/">AgarthaSF</a></div></div></div><nav class="no-bg" id="nav"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">FEI's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">文章</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a><a class="site-page" href="/gallery">相册</a></span><span class="pull-right"></span></div><div id="site-info"><div id="site-title">FEI's Blog</div><div id="site-sub-title"></div><div id="site-social-icons"><a class="social-icon" href="https://github.com/MOZyIF" target="_blank" rel="noreferrer noopener nofollow"><i class="fa-github fa"></i></a><a class="social-icon" href="https://space.bilibili.com/4413398" target="_blank" rel="noreferrer noopener nofollow"><i class="fa-bilibili fa"></i></a></div></div></nav><div id="content-outer"><div class="layout" id="content-inner"><div class="recent-post-item article-container"><a class="article-title" href="/2022/10/26/%E5%9F%BA%E4%BA%8Ecentos7%E7%9A%84mc%201.18.1%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">基于Centos7的Minecraft1.19.2服务器搭建</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2022-10-26</time><div class="content"><p>记录一下MC服务器的创建</p>
+<h3 id="一、安装Screen"><a href="#一、安装Screen" class="headerlink" title="一、安装Screen"></a>一、安装Screen</h3><p>使用screen目的是让服务器能单独存在一个后台控制台运行，方便维护和管理。</p>
+<p>安装指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install screen</span><br></pre></td></tr></table></figure>
+
+<p>创建一个新窗口：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S &#x27;窗口id&#x27;</span><br></pre></td></tr></table></figure>
+<p>退出窗口：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -d &#x27;窗口id&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>退出后再进入窗口：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r &#x27;窗口id&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>安装好screen后创建一个窗口即可开始搭建服务器。</p>
+<h3 id="二、安装JAVA"><a href="#二、安装JAVA" class="headerlink" title="二、安装JAVA"></a>二、安装JAVA</h3><p>JAVA1.8支持mc1.12以下的版本，1.12以上则需要至少JAVA11。</p>
+<h3 id="三、下载Minecraft服务端"><a href="#三、下载Minecraft服务端" class="headerlink" title="三、下载Minecraft服务端"></a>三、下载Minecraft服务端</h3><p>可以到mc官网或者mcbbs下载自己想要的服务端文件，例如server1.18.2.jar。</p>
+<p>Minecraft官网：在XGP上下载</p>
+<p>MCBBS:<a target="_blank" rel="noopener" href="https://www.mcbbs.net/">https://www.mcbbs.net/</a></p>
+<p>下载好服务端文件后，可以在云创建一个工作文件夹minecraft，并在其中创建一个server文件夹储存服务端文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir .../minecraft</span><br><span class="line">mkdir .../minecraft/server</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="四、运行Minecraft服务端"><a href="#四、运行Minecraft服务端" class="headerlink" title="四、运行Minecraft服务端"></a>四、运行Minecraft服务端</h3><p>进入server文件夹开始运行服务端</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar &#x27;服务器文件id&#x27;.jar nogui</span><br></pre></td></tr></table></figure>
+<p>这里的java是JAVA_HOME即默认java路径和版本，可以替换成特定java路径</p>
+<p>其中可以添加一些限制条件来配置服务器虚拟机的内存等参数：</p>
+<p>​	-Xmx512m：设置Java虚拟机的堆的最大可用内存大小，单位：兆(m)</p>
+<p>​	-Xms512m：设置Java虚拟机的堆的初始值内存大小，单位：兆(m)</p>
+<p>​	-Xmn170m：设置年轻代内存大小，单位：兆(m)</p>
+<p>​	-Xss128k：设置每一个线程的栈大小。</p>
+<p>第一次运行时，会提醒运行失败。这时会发现服务端所在目录下多了几个文件，访问eula.txt</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi eula.<span class="property">txt</span></span><br></pre></td></tr></table></figure>
+
+<p>将其中的false改为true。再次运行服务端，这次，服务端运行成功。</p>
+<h3 id="五、服务器配置"><a href="#五、服务器配置" class="headerlink" title="五、服务器配置"></a>五、服务器配置</h3><p>退出服务端进入server.properties</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi server.properties</span><br></pre></td></tr></table></figure>
+
+<p>将其中的online-mode&#x3D;true改为false，这样可以使非正版MC客户端进入服务器。</p>
+<p>其他设置选项作用如下</p>
+<pre><code>level-seed 世界种子
+allow-nether 是否允许地狱
+server-port 服务器的游戏端口(默认25565)
+level-name 世界名称
+pvp 是否开启玩家伤害
+enable-command-block 是否允许命令方块
+white-list 是否开启白名单
+allow-flight 是否允许飞行
+spawn-npcs 是否生成NPC
+spawn-animals 是否生成动物
+spawn-monsters 是否生成怪物
+hardcore 是否开启极限模式
+difficulty 游戏难度
+gamemode 游戏模式
+max-players 最大玩家数
+motd 服务器会在玩家前显示的信息
+</code></pre>
+<h3 id="六、进入服务器"><a href="#六、进入服务器" class="headerlink" title="六、进入服务器"></a>六、进入服务器</h3><p>和部署其他网站平台一样，需要在防火墙开放端口以及在外部控制台安全组中开放防火墙来完成连接。</p>
+<p>查看已使用端口：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nultp</span><br></pre></td></tr></table></figure>
+
+<p>准确查看某一端口状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -anp |grep 端口号</span><br></pre></td></tr></table></figure>
+
+<p>防火墙的一些基本操作：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p tcp --dport 8080 -j ACCEPT</span><br></pre></td></tr></table></figure>
+
+<p>至此Minecraft纯净版服务器基本搭建完成。</p>
+<p><img src="C:\Users\MOZYIFEI\AppData\Roaming\Typora\typora-user-images\image-20221026020604065.png" alt="image-20221026020604065"></p>
+</div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2022/10/25/hello-world/">Hello World</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2022-10-25</time><div class="content"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
